@@ -11,21 +11,23 @@
 
 #get first element of the array
 def bubble_sort(array)
-  length = array.length
+  length = array.length * array.length - 1
   while length > 0
     array.map do |value|
       first_value = array[array.index(value)]
       second_value = array[array.index(value) + 1]
         if second_value == nil
-          return array
+          array
         elsif first_value > second_value
         array[array.index(value)], array[array.index(value) + 1] = array[array.index(value) + 1], array[array.index(value)]
         length -= 1
         else
           length -= 1
         end
+        array
     end
   end
+  array
 end
 #get second element of the array
 
@@ -39,4 +41,4 @@ end
 
 #return new array
 
-p bubble_sort([19, 2, 18, 3, 5, 7])
+p bubble_sort([2, 19, 3, 20, 1])
